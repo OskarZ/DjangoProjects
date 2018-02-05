@@ -1,0 +1,25 @@
+<!DOCTYP html>
+<html>
+<head>
+<title>BLOG: -Andere-</title>
+
+</head>
+
+<body>
+
+{% block content %}
+<div>    
+<h1><font color="red">Andere Kategorien</font></h1>
+</div>
+    {% for art in art %}
+    <h2>{{ art.title }}</h2>
+    <p>{{ art.text }}</p>
+    <p>{{ art.create_date }}<p>
+    {% endfor %}
+<form action="http://localhost:8000/Blog">
+    <input type="submit" value="Zurueck zur Startseite">
+</form>
+{% endblock content %}
+
+</body>
+</html>

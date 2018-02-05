@@ -1,0 +1,23 @@
+<!DOCTYP html>
+<html>
+<head>
+<title>BLOG: -Reisen-</title>
+</head>
+
+<body>
+<div>    
+<h1><font color="red">Reisen</font></h1>
+</div>
+
+{% block content %}
+    {% for art in art %}
+    <h2>{{ art.title }}</h2>
+    <p>{{ art.text }}</p>
+    {% endfor %}
+<form action="http://localhost:8000/Blog">
+    <input type="submit" value="Zurueck zur Startseite">
+</form>
+{% endblock content %}
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYP html>
+<html>
+<head>
+<title>BLOG-Startseite-</title>
+</head>
+
+<body>
+<div>    
+<h1><font color="red">Blog Uebersicht</font></h1>
+</div>
+<div>
+{% block content %}
+    {% for art in art %}
+    <h2>{{ art.title }}</h2>
+    <p>{{ art.text }}</p>
+    {% endfor %}
+</div>
+<div>
+<form action="../Blog/Reisen">
+    <input type="submit" value="Reisen">
+</form>
+
+<form action="../Blog/Arbeit">
+    <input type="submit" value="Arbeit">
+</form>
+
+<form action="../Blog/Freizeit">
+    <input type="submit" value="Freizeit">
+</form>
+
+<form action="../Blog/Andere">
+    <input type="submit" value="Andere">
+</form>
+
+<form action="../Blog/new">
+    <input type="submit" value="Post hinzufuegen">
+</form>
+{% endblock content %}
+</div>
+</body>
+</html>
