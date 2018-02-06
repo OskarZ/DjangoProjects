@@ -4,7 +4,7 @@
 <title>BLOG-Startseite-</title>
 </head>
 
-<body>
+<body style="background-color:powderblue;">
 <div>    
 <h1><font color="red">Blog Uebersicht</font></h1>
 </div>
@@ -13,6 +13,7 @@
     {% for art in art %}
     <h2>{{ art.title }}</h2>
     <p>{{ art.text }}</p>
+<p>{{ art.created_date }}<p>
     {% endfor %}
 </div>
 <div>
