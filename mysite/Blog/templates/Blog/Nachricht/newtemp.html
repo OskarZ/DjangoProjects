@@ -1,0 +1,22 @@
+<!DOCTYP html>
+<html>
+<head>
+<title>Neue Nachricht</title>
+</head>
+<body style="background-color:powderblue;">
+
+{% block content %}
+    <h1>Nachricht erstellen
+</h1>
+    <form method="POST" class="mail-form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="save btn btn-default">Nachrichten abrufen</button>
+    </form>
+<form action="http://localhost:8000/Blog">
+    <input type="submit" value="Zurueck zur Startseite">
+</form>
+{% endblock %}
+
+</body>
+</html>
+

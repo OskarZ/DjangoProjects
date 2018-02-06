@@ -1,0 +1,25 @@
+<!DOCTYP html>
+<html>
+<head>
+<title>Nachrichten</title>
+
+</head>
+
+<body style="background-color:powderblue;">
+
+{% block content %}
+<div>    
+<h1><font color="red">Nachrichten</font></h1>
+</div>
+    {% for var in var %}
+    <h2>{{ var.title }}</h2>
+	<p>{{ var.nachricht }}</p>
+    
+    {% endfor %}
+<form action="http://localhost:8000/Blog">
+    <input type="submit" value="Zurueck zur Startseite">
+</form>
+{% endblock content %}
+
+</body>
+</html>
