@@ -29,3 +29,4 @@ class Mail(models.Model):
 class account(models.Model):
     adresse = models.CharField(max_length=40)
     passwort = models.CharField(max_length=20)
+
