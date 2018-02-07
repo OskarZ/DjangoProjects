@@ -75,12 +75,14 @@ def index7(request):
         if form.is_valid():
             p1 = form.cleaned_data['schl1']
             p2 = form.cleaned_data['schl2']
-            logi = account.objects.get(adresse=p1, passwort=p2)
-            logi1 = logi.adresse
-            var = Mail.objects.filter(mail=logi1)
-            return render(request, 'Blog/Nachricht/Anzeigetemp.html', {
-                'var':var
-            })
+            qe = account.objects.filter(adresse=p1, passwort=p2).count()
+            if qe != 0:
+                logi = account.objects.get(adresse=p1, passwort=p2)
+                logi1 = logi.adresse
+                var = Mail.objects.filter(mail=logi1)
+                return render(request, 'Blog/Nachricht/Anzeigetemp.html', {
+                    'var':var
+                })
     else:
         form = AutoForm()
     return render(request, 'Blog/Nachricht/Autotemp.html', {
