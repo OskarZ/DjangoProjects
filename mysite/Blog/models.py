@@ -22,8 +22,8 @@ class Post(models.Model):
 
 
 class Mail(models.Model):
-    schlüssel1 = models.CharField(max_length=20)
-    schlüssel2 = models.CharField(max_length=20)
+    mail = models.CharField(max_length=40)
+    Schlüssel = models.CharField(max_length=20)
     title = models.CharField(max_length=50, default='Kein Titel')
     nachricht = models.TextField()
 

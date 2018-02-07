@@ -73,7 +73,7 @@ def index7(request):
         if form.is_valid():
             p1 = form.cleaned_data['schl1']
             p2 = form.cleaned_data['schl2']
-            var = Mail.objects.filter(schlüssel1=p1, schlüssel2=p2)
+            var = Mail.objects.filter(mail=p1, Schlüssel=p2)
             return render(request, 'Blog/Nachricht/Anzeigetemp.html', {
                 'var':var
             })

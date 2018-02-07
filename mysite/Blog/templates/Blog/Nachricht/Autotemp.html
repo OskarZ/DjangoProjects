@@ -9,10 +9,10 @@
     <h1>Bitte autorisieren sie sich!!</h1>
     <form method="POST" class="auto-form">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="save btn btn-default">Save</button>
+        <button type="submit" class="save btn btn-default">Nachrichten abrufen</button>
     </form>
-<form action="http://localhost:8000/Blog">
-    <input type="submit" value="Zurueck zur Startseite">
+<form action="http://localhost:8000/Blog/Nachricht">
+    <input type="submit" value="Zurueck zu Nachrichten">
 </form>
 {% endblock %}
 
