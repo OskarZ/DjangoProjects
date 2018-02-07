@@ -23,8 +23,9 @@ class Post(models.Model):
 
 class Mail(models.Model):
     mail = models.CharField(max_length=40)
-    Schlüssel = models.CharField(max_length=20)
     title = models.CharField(max_length=50, default='Kein Titel')
     nachricht = models.TextField()
 
-
+class account(models.Model):
+    adresse = models.CharField(max_length=40)
+    passwort = models.CharField(max_length=20)

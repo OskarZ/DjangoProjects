@@ -6,6 +6,8 @@ from .forms import PostForm
 from .forms import MailForm
 from .models import Mail
 from .forms import AutoForm
+from .models import account
+from .forms import accountForm
 
 def index(request):
 
@@ -73,7 +75,9 @@ def index7(request):
         if form.is_valid():
             p1 = form.cleaned_data['schl1']
             p2 = form.cleaned_data['schl2']
-            var = Mail.objects.filter(mail=p1, Schlüssel=p2)
+            logi = account.objects.get(adresse=p1, passwort=p2)
+            logi1 = logi.adresse
+            var = Mail.objects.filter(mail=logi1)
             return render(request, 'Blog/Nachricht/Anzeigetemp.html', {
                 'var':var
             })
@@ -85,3 +89,30 @@ def index7(request):
 
 def index8(request):
     return render(request, 'Blog/Nachricht/Start.html', {})
+
+
+def index9(request):
+    if request.method == "POST":
+        form = accountForm(request.POST)
+        if form.is_valid():
+            t = form.cleaned_data['adresse']
+            r = account.objects.filter(adresse=t).count()
+            if r == 0:
+                post = form.save(commit=False)
+                post.save()
+                return render(request, 'Blog/Nachricht/accerfolg.html',{})
+            else:
+                form = accountForm()
+            return render(request, 'blog/Nachricht/newacc.html', {
+                'form': form
+            })
+
+    else:
+        form = accountForm()
+    return render(request, 'blog/Nachricht/newacc.html',{
+        'form':form
+    })
+
+
+
+

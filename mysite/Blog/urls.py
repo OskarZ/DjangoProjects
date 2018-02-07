@@ -12,4 +12,5 @@ urlpatterns = [
     path('Nachricht/new', views.index6, name='index6'),
     path('Nachricht/Autorisieren', views.index7, name='index7'),
     path('Nachricht/', views.index8, name='index8'),
+    path('Nachricht/Account', views.index9, name='index9'),
 ]
