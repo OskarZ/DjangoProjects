@@ -7,15 +7,19 @@ Installieren von Django.
 
    -Wenn man sicher sein möchte, dass Django ordnungsgemäß installiert wurde, öffnet man die Python-Shell
     durch Ausführen des Commands "Python " und führt folgenden Test aus: 
-   --------------------------------------------------    
+    
+
 
     >>> import django
     >>> print(django.get_version())
     
-    ------------------------------------------------
+
+
     wird nun die Version von Django angezeigt, wurde es erfolgreich installiert.
 
-(für alle Schritte wird vorausgesetzt, dass Python bereits installiert wurde)
+    (für alle Schritte wird vorausgesetzt, dass Python bereits installiert wurde)
+
+
 
 Erstellen eines Django Projekts
 -----------------------------------------------------
@@ -29,6 +33,8 @@ Erstellen eines Django Projekts
    -Jetzt führt man den Command "Python manage.py runserver" aus. Unter http://localhost:8000 kann man nun die von Django 
     erstellte Website aufrufen.
 
+
+
 Erstellen einer Django App.
 ------------------------------------------------------
 
@@ -40,7 +46,8 @@ Erstellen einer Django App.
 
 
    -Dann öffnet man die Datei mysite/mysite/urls.py und ersetzt ihren Code durch Folgendes:
-   ---------------------------------------------------
+   
+
 
    from django.urls import include, path
    from django.contrib import admin
@@ -50,10 +57,11 @@ Erstellen einer Django App.
        path('admin/', admin.site.urls),
    ]  
 
-   ----------------------------------------------------
+   
    -Als Nächstes wird die Datei "mysite/-Name der App-/urls.py geöffnet die gerade erstellt wurde
     dort wird folgender Code eingefügt:
-   ----------------------------------------------------
+  
+
 
    from django.urls import path
    from . import views
@@ -62,22 +70,25 @@ Erstellen einer Django App.
        path('', views.index, name='index'),
    ]
 
-   -----------------------------------------------------
+   
    -Im letzten Schritt muss nun noch der Code der Datei mysite/-Name der App-/views.py durch Folgendes ersetzt werden:
-   -----------------------------------------------------
+   
+
 
    from django.http import HttpResponse
 
    def index(request):
        return HttpResponse("##############")
 
-    ----------------------------------------------------
+    
+
+
     anstelle der # kann ein belibiger Text ausgegeben werden
 
 
     -unter http://localhost/-Name der App- ist nun der Text zusehen
-______________________________________________________________________________________________________________________________________
-______________________________________________________________________________________________________________________________________
+
+
 
 
 
